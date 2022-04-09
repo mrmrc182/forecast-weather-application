@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">"
+    <link rel="stylesheet" href="style.css">
+    <title>Global Weather Forecast</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand"><h1 class="text-align: center;">Weather Application</h1></a>
+    </nav>    
+    <form id="query" action="search"> Search for your city!
+        <input type="text"> 
+    </form>
+    <div class="main"><h2 id="city">San Diego</h2>
+        <div class="main-temp"></div>
+        <div class="main-windspeed"></div>
+        <div class="main-humidity"></div>
+        <div class="main-uvindex"></div>
+    </div>
+    <div class="future" id="1"></div>
+    <div class="future" id="2"></div>
+    <div class="future" id="3"></div>
+    <div class="future" id="4"></div>
+    <div class="future" id="5"></div>
+    <script src="script.js"></script>
+</body>
+</html>
