@@ -1,8 +1,15 @@
 *{
-    background-color: skyblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 form {
     margin-top: 50px;
     margin-left: 10px;
+}
+h1{
+    color:white;
+}
+.main{
+    background-color: navy;
+    color: white;
 }

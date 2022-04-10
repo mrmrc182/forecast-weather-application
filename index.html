@@ -10,25 +10,54 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand"><h1 class="text-align: center;">Weather Application</h1></a>
-    </nav>    
-    <form id="query" action="search"> Search for your city!
-        <input type="text"> 
-    </form>
-    <div class="main"><h2 id="city">San Diego</h2>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+        <h1 class="text-align: center;">Weather Application</h1>
+    </nav>
+</header>
+<div class="row main-container">  
+    <div class="col-2"><h2>Search for your city!</h2>
+        <input id="query" type="text"> 
+        <button id="search-button">Click me</button>
+    </div>
+    <div class="main col-10"><h2 id="city">San Diego</h2>
         <div class="main-temp"></div>
         <div class="main-windspeed"></div>
         <div class="main-humidity"></div>
         <div class="main-uvindex"></div>
     </div>
-    <div class="future" id="1"></div>
-    <div class="future" id="2"></div>
-    <div class="future" id="3"></div>
-    <div class="future" id="4"></div>
-    <div class="future" id="5"></div>
+</div>  
+    
+<div class="row forecast-container">
+    <div class="card col-2 future-1">
+        <div class="future-1-temp"></div>
+        <div class="future-1-windspeed"></div>
+        <div class="future-1-humidity"></div>
+    </div>
+    <div class="card col-2 future-2">
+        <div class="future-2-temp"></div>
+        <div class="future-2-windspeed"></div>
+        <div class="future-2-humidity"></div>
+    </div>
+    <div class="card col-2 future-3">
+        <div class="future-3-temp"></div>
+        <div class="future-3-windspeed"></div>
+        <div class="future-3-humidity"></div>
+    </div>
+    <div class="card col-2 future-4">
+        <div class="future-4-temp"></div>
+        <div class="future-4-windspeed"></div>
+        <div class="future-4-humidity"></div>
+    </div>
+    <div class="card col-2 future-5">
+        <div class="future-5-temp"></div>
+        <div class="future-5-windspeed"></div>
+        <div class="future-5-humidity"></div>
+    </div>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
