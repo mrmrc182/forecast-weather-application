@@ -75,45 +75,45 @@ searchButton.addEventListener ("click", function () {
             var mainHead = document.createElement("h3");
             mainHead.textContent = city + " " + today; 
             mainDate.appendChild(mainHead);
-            tempDisplay.textContent = "Temperature: " + JSON.stringify(data1.current.temp);
-            windDisplay.textContent = "Windspeed: " + JSON.stringify(data1.current.wind_speed);
-            humidityDisplay.textContent = "Humidity: " + JSON.stringify(data1.current.humidity);
+            tempDisplay.textContent = "Temperature: " + JSON.stringify(data1.current.temp) + " Fahrenheit";
+            windDisplay.textContent = "Windspeed: " + JSON.stringify(data1.current.wind_speed) + " mph";
+            humidityDisplay.textContent = "Humidity: " + JSON.stringify(data1.current.humidity) + "%";
             uviDisplay.textContent = "UVI: " + JSON.stringify(data1.current.uvi);
             //forecasted day 1 display
             var future1Head = document.createElement("h5");
             future1Head.textContent= nextDay1;
             future1Date.appendChild(future1Head);
-            future1Temp.textContent= "Temp: " + JSON.stringify(data1.daily[0].temp.day);
-            future1Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[0].wind_speed);
-            future1Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[0].humidity);
+            future1Temp.textContent= "Temp: " + JSON.stringify(data1.daily[0].temp.day) + " Fahrenheit";
+            future1Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[0].wind_speed) + " mph";
+            future1Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[0].humidity) + "%";
             //forecasted day 2 display
             var future2Head = document.createElement("h5");
             future2Head.textContent= nextDay2;
             future2Date.appendChild(future2Head);
-            future2Temp.textContent= "Temp: " + JSON.stringify(data1.daily[1].temp.day);
-            future2Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[1].wind_speed);
-            future2Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[1].humidity);
+            future2Temp.textContent= "Temp: " + JSON.stringify(data1.daily[1].temp.day) + " Fahrenheit";
+            future2Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[1].wind_speed) + " mph";
+            future2Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[1].humidity) + "%";
             //forecasted day 3 display
             var future3Head = document.createElement("h5");
             future3Head.textContent= nextDay3;
             future3Date.appendChild(future3Head);
-            future3Temp.textContent= "Temp: " + JSON.stringify(data1.daily[2].temp.day);
-            future3Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[2].wind_speed);
-            future3Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[2].humidity);
+            future3Temp.textContent= "Temp: " + JSON.stringify(data1.daily[2].temp.day) + " Fahrenheit";
+            future3Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[2].wind_speed) + " mph";
+            future3Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[2].humidity) + "%";
             //forecasted day 4 display
             var future4Head = document.createElement("h5");
             future4Head.textContent= nextDay4;
             future4Date.appendChild(future4Head);
-            future4Temp.textContent= "Temp: " + JSON.stringify(data1.daily[3].temp.day);
-            future4Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[3].wind_speed);
-            future4Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[3].humidity);
+            future4Temp.textContent= "Temp: " + JSON.stringify(data1.daily[3].temp.day) + " Fahrenheit";
+            future4Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[3].wind_speed) + " mph";
+            future4Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[3].humidity) + "%";
             //forecasted day 5 display
             var future5Head = document.createElement("h5");
             future5Head.textContent= nextDay5;
             future5Date.appendChild(future5Head);
-            future5Temp.textContent= "Temp: " + JSON.stringify(data1.daily[4].temp.day);
-            future5Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[4].wind_speed);
-            future5Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[4].humidity);
+            future5Temp.textContent= "Temp: " + JSON.stringify(data1.daily[4].temp.day) + " Fahrenheit";
+            future5Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[4].wind_speed) + " mph";
+            future5Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[4].humidity) + "%";
         })
 
     })    
