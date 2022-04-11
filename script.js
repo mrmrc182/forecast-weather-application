@@ -34,17 +34,32 @@ var future5Temp = document.querySelector(".future-5-temp");
 var future5Wind = document.querySelector(".future-5-windspeed");
 var future5Humidity = document.querySelector(".future-5-humidity");
 
-var queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=32.71&lon=-117.16&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
+// var queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=32.71&lon=-117.16&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
+var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=Escondido&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
 
 
 searchButton.addEventListener("click", function () {
     console.log(city);
-    fetch(queryURL)
+    fetch(geocodeURL)
     .then(function (response) {
         return response.json();
     })
     .then (function (data){
         console.log(data);
+        var geocodeLat = JSON.stringify(data[0].lat);
+        console.log(geocodeLat);
+        var geocodeLon = JSON.stringify(data[0].lon);
+        console.log(geocodeLon);
+        queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + geocodeLat + "&lon=" + geocodeLon+ "&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
+
+        
+    } .then(function display (){
+        fetch(queryURL)
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (data){
+        
         console.log(JSON.stringify(data.current.temp));
 
         //main display
@@ -77,5 +92,6 @@ searchButton.addEventListener("click", function () {
         future5Temp.textContent= "Temp: " + JSON.stringify(data.daily[4].temp.day);
         future5Wind.textContent= "Windspeed: " + JSON.stringify(data.daily[4].wind_speed);
         future5Humidity.textContent= "Humidity: " + JSON.stringify(data.daily[4].humidity);
+        )}
     })
 })
