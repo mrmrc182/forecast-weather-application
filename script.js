@@ -170,42 +170,9 @@ histButton.addEventListener ("click", function (event) {
     function addButton() {
     var histButton = document.createElement("button");
     histButton.textContent = queryName;
-    histButton.addClass = (".center-buttons");
-    histButton.addClass = ("width: 100%;");
-    searchList.classList.add("block");
     searchList.appendChild(histButton);
     localStorage.setItem("search-record", histButton);
 } 
 addButton();
 })
 
-// function init(){
-//      var storedSearch = JSON.parse(localStorage.getItem("searchItem"));
-//      console.log(storedSearch);
-//      if (storedSearch){
-//          searchList = storedSearch;
-//      }
-
-// }
-
-
-// function init(){
-//     var storedSearch = JSON.parse(localStorage.getItem("history"));
-//     console.log(storedSearch);
-// }
-
-// function renderSearchList() {
-//     searchList.innerHTML = "";
-  
-//     for (var i = 0; i < searches.length; i++) {
-//       var searches = searches[i];
-  
-//       var historyButton = document.createElement("button");
-//       historyButton.textContent = (storedSearch);
-//       historyButton.setAttribute("data-index", i);
-  
-//       searchList.appendChild(historyButton);
-//     }
-//   }
-// init()
-// renderSearchList()

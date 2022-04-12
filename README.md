@@ -1,10 +1,12 @@
 # forecast-weather-application
 
 ## Description
-This application provides information about the weather in a specific location.  A user can type a city in and see the current weather, as well as a forecast for the next fice days.  
+This application provides information about the weather in a specific location.  A user can type a city in and see the current weather, as well as a forecast for the next five days.  After a user has hit "click me", the city will be displayed as a button underneath the 
+
+This assignment was also a challenge, especially when it came to local storage.  
 
 ## Contributors
-I wrote the code, but worked with Sam to fix a couple of parts.  Also received help at office hours from John and TA Michael.
+I wrote the code, but worked with classmates Sam and Jake to fix a couple of parts.  Also received help at office hours from BCS Tutor Tyler, as well as my instructor John and TA Michael.
 
 ## Usage
 To use the app, open it and type a city you would like to know the weather for into the search box.  Then hit search.  See the screenshot below as a reference.
