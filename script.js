@@ -55,46 +55,13 @@ var future5Temp = document.querySelector(".future-5-temp");
 var future5Wind = document.querySelector(".future-5-windspeed");
 var future5Humidity = document.querySelector(".future-5-humidity");
 
-var cityInputEl = document.querySelector("#query")
-// var queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=32.71&lon=-117.16&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
-// var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=Escondido&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
-
+var cityInputEl = document.querySelector("#query");
 var mainDateContainer = document.getElementById("main-date-container");
-
-// function init(){
-//     var storedSearch = JSON.parse(localStorage.getItem("searchItem"));
-//     console.log(storedSearch);
-//     //I want to run this data when the page loads
-//     //every variable's content has to be set to zero or blank
-// }
-
-
-// var searches = [0];
-
-// function renderSearchList() {
-//     searchList.innerHTML = "";
-  
-//     for (var i = 0; i < searches.length; i++) {
-//       var searches = searches[i];
-  
-//       var historyButton = document.createElement("button");
-//       historyButton.textContent = (storedSearch);
-//       historyButton.setAttribute("data-index", i);
-  
-//       searchList.appendChild(historyButton);
-//     }
-//   }
-
 var searchList = document.getElementById("search-list");
-function addButton() {
-    var searchButton = document.createElement("button");
-    searchButton.textContent = cityInputEl.value.trim();
-    searchList.appendChild(searchButton);
-}
 
-searchButton.addEventListener("click", addButton());
 searchButton.addEventListener ("click", function (event) {
     localStorage.setItem("searchItem", cityInputEl.value.trim());
+    //add a new button in here
     event.preventDefault();
     var queryName = cityInputEl.value.trim();
     console.log(queryName);
@@ -195,7 +162,43 @@ searchButton.addEventListener ("click", function (event) {
             future5Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[4].wind_speed) + " mph";
             future5Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[4].humidity) + "%";
         })
-    })    
+    })   
+    function addButton() {
+    var searchButton = document.createElement("button");
+    searchButton.textContent = queryName;
+    searchButton.addClass = (".center-buttons");
+    searchList.classList.add("block");
+    searchList.appendChild(searchButton);
+    localStorage.setItem("search-record", searchButton);
+} 
+addButton();
 })
+
+// function init(){
+//      var storedSearch = JSON.parse(localStorage.getItem("searchItem"));
+//      console.log(storedSearch);
+//     //I want to run this data when the page loads
+//     //every variable's content has to be set to zero or blank
+// }
+
+
+function init(){
+    var storedSearch = JSON.parse(localStorage.getItem("history"));
+    console.log(storedSearch);
+}
+
+// function renderSearchList() {
+//     searchList.innerHTML = "";
+  
+//     for (var i = 0; i < searches.length; i++) {
+//       var searches = searches[i];
+  
+//       var historyButton = document.createElement("button");
+//       historyButton.textContent = (storedSearch);
+//       historyButton.setAttribute("data-index", i);
+  
+//       searchList.appendChild(historyButton);
+//     }
+//   }
 // init()
 // renderSearchList()
