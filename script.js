@@ -182,10 +182,10 @@ addButton();
 // }
 
 
-function init(){
-    var storedSearch = JSON.parse(localStorage.getItem("history"));
-    console.log(storedSearch);
-}
+// function init(){
+//     var storedSearch = JSON.parse(localStorage.getItem("history"));
+//     console.log(storedSearch);
+// }
 
 // function renderSearchList() {
 //     searchList.innerHTML = "";
