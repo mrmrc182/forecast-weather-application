@@ -1,6 +1,6 @@
-var searchButton = document.getElementById("search-button");
+var histButton = document.getElementById("search-button");
 var query = document.getElementById("#query");
-// var city = "Escondido";
+
 var APIKey = "a914282a4259cce175b4a3f34d3738fb";
 var today = moment().format("MMM Do, YYYY");
 var forecastContainer = document.querySelector(".forecast-container")
@@ -59,9 +59,10 @@ var cityInputEl = document.querySelector("#query");
 var mainDateContainer = document.getElementById("main-date-container");
 var searchList = document.getElementById("search-list");
 
-searchButton.addEventListener ("click", function (event) {
+var fiveDayHeadline = document.getElementById("five-day-headline");
+
+histButton.addEventListener ("click", function (event) {
     localStorage.setItem("searchItem", cityInputEl.value.trim());
-    //add a new button in here
     event.preventDefault();
     var queryName = cityInputEl.value.trim();
     console.log(queryName);
@@ -101,6 +102,9 @@ searchButton.addEventListener ("click", function (event) {
             windDisplay.textContent = "Windspeed: " + JSON.stringify(data1.current.wind_speed) + " mph";
             humidityDisplay.textContent = "Humidity: " + JSON.stringify(data1.current.humidity) + "%";
             uviDisplay.textContent = "UVI: " + JSON.stringify(data1.current.uvi);
+            var fiveDay = document.createElement("h3");
+            fiveDay.textContent = "Five Day Forecast:";
+            fiveDayHeadline.appendChild(fiveDay);
             //forecasted day 1 display
             var future1Head = document.createElement("h5");
             future1Head.textContent= nextDay1;
@@ -164,12 +168,13 @@ searchButton.addEventListener ("click", function (event) {
         })
     })   
     function addButton() {
-    var searchButton = document.createElement("button");
-    searchButton.textContent = queryName;
-    searchButton.addClass = (".center-buttons");
+    var histButton = document.createElement("button");
+    histButton.textContent = queryName;
+    histButton.addClass = (".center-buttons");
+    histButton.addClass = ("width: 100%;");
     searchList.classList.add("block");
-    searchList.appendChild(searchButton);
-    localStorage.setItem("search-record", searchButton);
+    searchList.appendChild(histButton);
+    localStorage.setItem("search-record", histButton);
 } 
 addButton();
 })
@@ -177,8 +182,10 @@ addButton();
 // function init(){
 //      var storedSearch = JSON.parse(localStorage.getItem("searchItem"));
 //      console.log(storedSearch);
-//     //I want to run this data when the page loads
-//     //every variable's content has to be set to zero or blank
+//      if (storedSearch){
+//          searchList = storedSearch;
+//      }
+
 // }
 
 
