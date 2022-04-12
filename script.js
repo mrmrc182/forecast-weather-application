@@ -65,7 +65,7 @@ searchButton.addEventListener ("click", function (event) {
     event.preventDefault();
     var queryName = cityInputEl.value.trim();
     console.log(queryName);
-    var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + queryName + "&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
+    var geocodeURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + queryName + "&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
     if (queryName) {
         cityInputEl.value = " ";
     } else {
@@ -81,7 +81,7 @@ searchButton.addEventListener ("click", function (event) {
         console.log(geocodeLat);
         var geocodeLon = JSON.stringify(data[0].lon);
         console.log(geocodeLon);
-        queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + geocodeLat + "&lon=" + geocodeLon+ "&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
+        queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + geocodeLat + "&lon=" + geocodeLon+ "&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
         fetch(queryURL)
         .then (function (response){
             return response.json();
@@ -94,7 +94,7 @@ searchButton.addEventListener ("click", function (event) {
             mainDate.appendChild(mainHead);
             var img = document.createElement("img");
             var iconCode = data1.current.weather[0].icon;
-            var iconURL = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+            var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
             img.setAttribute("src", iconURL);
             mainIcon.appendChild(img);
             tempDisplay.textContent = "Temperature: " + JSON.stringify(data1.current.temp) + " Fahrenheit";
@@ -107,7 +107,7 @@ searchButton.addEventListener ("click", function (event) {
             future1Date.appendChild(future1Head);
             var future1Img = document.createElement("img");
             var future1IconRef= data1.daily[0].weather[0].icon;
-            var icon1URL = "http://openweathermap.org/img/wn/" + future1IconRef + ".png";
+            var icon1URL = "https://openweathermap.org/img/wn/" + future1IconRef + ".png";
             future1Img.setAttribute("src", icon1URL);
             future1Icon.appendChild(future1Img);
             future1Temp.textContent= "Temp: " + JSON.stringify(data1.daily[0].temp.day) + " Fahrenheit";
@@ -119,7 +119,7 @@ searchButton.addEventListener ("click", function (event) {
             future2Date.appendChild(future2Head);
             var future2Img = document.createElement("img");
             var future2IconRef= data1.daily[1].weather[0].icon;
-            var icon2URL = "http://openweathermap.org/img/wn/" + future2IconRef + ".png";
+            var icon2URL = "https://openweathermap.org/img/wn/" + future2IconRef + ".png";
             future2Img.setAttribute("src", icon2URL);
             future2Icon.appendChild(future2Img);
             future2Temp.textContent= "Temp: " + JSON.stringify(data1.daily[1].temp.day) + " Fahrenheit";
@@ -131,7 +131,7 @@ searchButton.addEventListener ("click", function (event) {
             future3Date.appendChild(future3Head);
             var future3Img = document.createElement("img");
             var future3IconRef= data1.daily[2].weather[0].icon;
-            var icon3URL = "http://openweathermap.org/img/wn/" + future3IconRef + ".png";
+            var icon3URL = "https://openweathermap.org/img/wn/" + future3IconRef + ".png";
             future3Img.setAttribute("src", icon3URL);
             future3Icon.appendChild(future3Img);
             future3Temp.textContent= "Temp: " + JSON.stringify(data1.daily[2].temp.day) + " Fahrenheit";
@@ -143,7 +143,7 @@ searchButton.addEventListener ("click", function (event) {
             future4Date.appendChild(future4Head);
             var future4Img = document.createElement("img");
             var future4IconRef= data1.daily[3].weather[0].icon;
-            var icon4URL = "http://openweathermap.org/img/wn/" + future4IconRef + ".png";
+            var icon4URL = "https://openweathermap.org/img/wn/" + future4IconRef + ".png";
             future4Img.setAttribute("src", icon4URL);
             future4Icon.appendChild(future4Img);
             future4Temp.textContent= "Temp: " + JSON.stringify(data1.daily[3].temp.day) + " Fahrenheit";
@@ -155,7 +155,7 @@ searchButton.addEventListener ("click", function (event) {
             future5Date.appendChild(future5Head);
             var future5Img = document.createElement("img");
             var future5IconRef= data1.daily[4].weather[0].icon;
-            var icon5URL = "http://openweathermap.org/img/wn/" + future5IconRef + ".png";
+            var icon5URL = "https://openweathermap.org/img/wn/" + future5IconRef + ".png";
             future5Img.setAttribute("src", icon5URL);
             future5Icon.appendChild(future5Img);
             future5Temp.textContent= "Temp: " + JSON.stringify(data1.daily[4].temp.day) + " Fahrenheit";
