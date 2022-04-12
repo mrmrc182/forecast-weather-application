@@ -1,8 +1,9 @@
 var searchButton = document.getElementById("search-button");
 var query = document.getElementById("#query");
-var city = "Escondido";
+// var city = "Escondido";
 var APIKey = "a914282a4259cce175b4a3f34d3738fb";
 var today = moment().format("MMM Do, YYYY");
+var forecastContainer = document.querySelector(".forecast-container")
 
 
 var nextDay1 = moment().add(1, "days").format("MMM Do, YYYY");
@@ -54,14 +55,56 @@ var future5Temp = document.querySelector(".future-5-temp");
 var future5Wind = document.querySelector(".future-5-windspeed");
 var future5Humidity = document.querySelector(".future-5-humidity");
 
+var cityInputEl = document.querySelector("#query")
 // var queryURL = "http://api.openweathermap.org/data/2.5/onecall?lat=32.71&lon=-117.16&appid=a914282a4259cce175b4a3f34d3738fb&units=imperial";
-var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=Escondido&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
+// var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=Escondido&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
+
+var mainDateContainer = document.getElementById("main-date-container");
+
+// function init(){
+//     var storedSearch = JSON.parse(localStorage.getItem("searchItem"));
+//     console.log(storedSearch);
+//     //I want to run this data when the page loads
+//     //every variable's content has to be set to zero or blank
+// }
 
 
+// var searches = [0];
 
-searchButton.addEventListener ("click", function () {
-    console.log(searchButton.value);
-    console.log(city);
+// function renderSearchList() {
+//     searchList.innerHTML = "";
+  
+//     for (var i = 0; i < searches.length; i++) {
+//       var searches = searches[i];
+  
+//       var historyButton = document.createElement("button");
+//       historyButton.textContent = (storedSearch);
+//       historyButton.setAttribute("data-index", i);
+  
+//       searchList.appendChild(historyButton);
+//     }
+//   }
+
+var searchList = document.getElementById("search-list");
+function addButton() {
+    var searchButton = document.createElement("button");
+    searchButton.textContent = cityInputEl.value.trim();
+    searchList.appendChild(searchButton);
+}
+
+searchButton.addEventListener("click", addButton());
+searchButton.addEventListener ("click", function (event) {
+    localStorage.setItem("searchItem", cityInputEl.value.trim());
+    event.preventDefault();
+    var queryName = cityInputEl.value.trim();
+    console.log(queryName);
+    var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + queryName + "&limit=5&appid=a914282a4259cce175b4a3f34d3738fb";
+    if (queryName) {
+        cityInputEl.value = " ";
+    } else {
+        alert("Please enter a valid city");
+        return;
+    }
     fetch(geocodeURL)
     .then(function (response) {
         return response.json();
@@ -80,7 +123,7 @@ searchButton.addEventListener ("click", function () {
             console.log(data1);
             //main display
             var mainHead = document.createElement("h3");
-            mainHead.textContent = city + " " + today; 
+            mainHead.textContent = queryName + " " + today; 
             mainDate.appendChild(mainHead);
             var img = document.createElement("img");
             var iconCode = data1.current.weather[0].icon;
@@ -152,6 +195,7 @@ searchButton.addEventListener ("click", function () {
             future5Wind.textContent= "Windspeed: " + JSON.stringify(data1.daily[4].wind_speed) + " mph";
             future5Humidity.textContent= "Humidity: " + JSON.stringify(data1.daily[4].humidity) + "%";
         })
-
     })    
 })
+// init()
+// renderSearchList()
